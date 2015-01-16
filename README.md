@@ -4,6 +4,8 @@ A music visualizer written in HTML5 and JavaScript.
 
 This version of the visualizer only works in Chrome (sorry for everyone else).
 
+The Vinyl_Disc_Record_clip_art.svg is from <http://www.clker.com/clipart-13605.html>.
+
 A working version can also be found on my portfolio <http://idoshalev.ca/>
 
 ScreenShots
