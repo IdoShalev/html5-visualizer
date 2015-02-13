@@ -1,5 +1,3 @@
-document.getElementById('audio_box').onchange = function () {
-//window.addEventListener("load", initMp3Player, false);
 var canvas, ctx, analyser, elapsedFrames=0, particles_array, lights_array, audio;
 		var img = new Image();
 			img.src = 'Vinyl_Disc_Record_clip_art.svg';
@@ -37,17 +35,20 @@ var canvas, ctx, analyser, elapsedFrames=0, particles_array, lights_array, audio
 		        }
 		    }
 		};
+document.getElementById('audio_box').onchange = function () {
+	var currentAudio = document.getElementById("audioBox");
+	while (currentAudio.firstChild) {
+		currentAudio.removeChild(currentAudio.firstChild);
+	}
 $(document).ready(function () {
   if (window.webkitURL) window.URL = window.webkitURL;
 	$(function() {
 	    var audio_box = $('#audio_box')[0];
-	    //when files have been selected
 	    $(function() {
 	        var files = audio_box.files;
 	        for (var i = 0; i < files.length; i++) {
 	            var file = files[i];
 	            var objectURL = window.URL.createObjectURL(file);
-	            //create object url
 	            audio = $('<audio />', {
 	                src: objectURL,
 	                controls: 'controls',
@@ -57,7 +58,6 @@ $(document).ready(function () {
 	            document.getElementById('audioBox').appendChild(audio);
 	        }
 	        initMp3Player();
-	        console.log("yay");
 	    });
 	});
 
